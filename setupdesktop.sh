@@ -6,7 +6,7 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo add-apt-repository ppa:dawidd0811/neofetch
 sudo add-apt-repository ppa:otto-kesselgulasch/gimp
 
-sudo apt update
+sudo apt update && sudo apt upgrade -y
 
 
 # Install Apps
