@@ -1,17 +1,22 @@
 ---
 
-addrepo:
+addrepocli:
+    app-wget: wget
+    repo-neofetch: sudo add-apt-repository ppa:dawidd0811/neofetch -y
+    
+
+addrepogui:
+    app-wget: wget
     key-microsoft: wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-    repo-microsoft: sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-    repo-neofetch: sudo add-apt-repository ppa:dawidd0811/neofetch
-    repo-gimp: sudo add-apt-repository ppa:otto-kesselgulasch/gimp
+    repo-microsoft: sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" -y
+    repo-gimp: sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y
+    
     
 addappscli:
     app-linux-headers: linux-headers-$(uname -r)
     app-build-essential: build-essential
     app-dkms: dkms
     app-apt-transport-https: apt-transport-https
-    app-wget: wget
     app-code: code
     app-neofetch: neofetch
     app-software-properties-common: software-properties-common
@@ -23,6 +28,12 @@ addappsgui:
     app-synaptic: synaptic
     app-gimp: gimp
     app-darktable: darktable
+    
+    
+commandscli:
+    cmd-update-bashrc: cp ~/.bashrc ~/.bashrc_bak && echo 'neofetch' >> ~/.bashrc
+    
+    
     
     
     
