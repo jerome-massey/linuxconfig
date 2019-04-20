@@ -8,8 +8,9 @@ def apt_up():
 
 
 
-def app_repo():
-    pass
+def add_repo(conf):
+    for key, cmd in conf:
+        subprocess.run(cmd, shell=True)
 
 
 
@@ -19,8 +20,9 @@ def install_app():
 
 
 def main():
-    print('Hello World')
-    return None
+    with open('./test.yaml', 'r') as file:
+        config = yaml.load(file, Loader=yaml.Loader)
+    add_repo(config)
 
     
 

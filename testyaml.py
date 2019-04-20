@@ -5,8 +5,11 @@ import pprint
 
 with open('./test.yaml', 'r') as file:
     config = yaml.load(file, Loader=yaml.Loader)
-    pprint.pprint(config)
+    #pprint.pprint(config)
     #pprint.pprint(config['addrepo'].items())
+    
+for key, value in config['addrepo'].items():
+    print(f'{key}: {value}')
     
     
 
